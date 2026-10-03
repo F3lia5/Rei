@@ -15,9 +15,9 @@ def listen(seconds=4):
   segments, _ = model.transcribe(
     audio.flatten(),
     language="en",
-    beam_size=5,
+    beam_size=1,
     vad_filter=True,
-    initial_prompt="Rei, go sleep now, open terminal, workspace, volume up, volume down, quiet, louder",
+    initial_prompt="Rei, Rei stop, Rei play, go sleep now, open terminal, workspace, volume up, volume down, quiet, louder",
   )
   text = "".join(s.text for s in segments)
   return _normalize(text)
